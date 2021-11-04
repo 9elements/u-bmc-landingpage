@@ -1,0 +1,30 @@
+.contact {
+  position: relative;
+  padding-top: get-size("major");
+
+  @include media-query("lg") {
+    --stack-space: 2rem;
+  }
+
+  &:after {
+    content: "";
+    width: 45vw;
+    height: 0.875rem;
+    background: var(--color-highlight);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &:before {
+    content: "";
+    width: 3.125rem;
+    height: 3.125rem;
+    position: absolute;
+    left: calc(45vw - 0.2rem);
+    top: -1.125rem;
+    border-radius: 50%;
+    margin-left: calc((50vw - 50%) * -1);
+    box-shadow: inset 0 0 0 0.875rem var(--color-highlight);
+  }
+}

@@ -1,0 +1,96 @@
+// First up: config and functions
+@import "config";
+
+// Next: pull in gorko for design tokens
+@import "../../node_modules/gorko/gorko.scss";
+
+@import "reset";
+
+// Global styles start
+:root {
+  --color-mode: "light";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark";
+  }
+}
+
+body {
+  line-height: 1.5;
+  @include apply-utility("font", "base");
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease-out;
+}
+
+a:not([class]) {
+  color: currentColor;
+  //text-decoration-color: get-color('quinary');
+}
+
+:focus-visible {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 0.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include apply-utility("font", "headline");
+  @include apply-utility("weight", "bold");
+  text-transform: uppercase;
+}
+
+// High contrast selection because it can help visually-impaired
+// folks read the text easier
+::selection {
+  color: get-color("white");
+
+  // We set this as an RGBA because that’s how you get a solid color, by using 0.99
+  // alpha value. Browsers are wild.
+  background: rgba(get-color("dark-blue"), 0.99);
+}
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: 1px solid get-color("dark-blue");
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: get-color("dark-blue");
+  border-radius: 0.25rem;
+}
+
+// Layout
+@import "layout/column-text";
+@import "layout/stack";
+@import "layout/switcher";
+@import "layout/wrapper";
+
+// Utilities
+@import "utilities/sr-only";
+
+// Blocks
+@import "blocks/contact-item";
+@import "blocks/dark-light-switch";
+@import "blocks/intro";
+@import "blocks/osfc";
+@import "blocks/sections";
+@import "blocks/site-foot";
+@import "blocks/site-head";
+@import "blocks/squid";
+@import "blocks/tool";
+@import "blocks/toolset";

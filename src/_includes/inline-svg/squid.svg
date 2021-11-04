@@ -1,0 +1,29 @@
+  <svg xmlns="http://www.w3.org/2000/svg" class="squid" fill="none" viewBox="0 0 2200 618" aria-hidden="true">
+    <g id="squid" stroke-width="14">
+      <circle id="circle-ur" cx="1193.5" cy="295.5" r="22.5" />
+      <circle id="circle-ul" cx="1006.5" cy="295.5" r="22.5" />
+      <circle id="circle-lr" cx="1135.5" cy="359.5" r="22.5" />
+      <circle id="circle-ll" cx="1064.5" cy="359.5" r="22.5" />
+      <path id="connector-ur" d="M1216 296h986" />
+      <path id="connector-lr" d="M1157 361h271l66-66" />
+      <path id="connector-ul" d="M985 296H-8" />
+      <path id="connector-ll" d="M1044 361H773l-66-66" />
+      <path id="body-l-1" d="M1139 338v-85a37 37 0 0 0-74 0v85" />
+      <path id="body-l-2" d="M1139 338v-85a37 37 0 0 0-74 0v85" />
+      <path id="body-ur" stroke-linecap="round" d="M1196 270c0-36-16-69-52-81" />
+      <path id="body-ul" stroke-linecap="round" d="M1008 270c0-36 17-69 52-81" />
+      <path id="head-1" stroke-linecap="round" d="M1041 198a84 84 0 0 1 61-142 84 84 0 0 1 61 142" />
+      <path id="head-2" stroke-linecap="round" d="M1041 198a84 84 0 0 1 61-142 84 84 0 0 1 61 142" />
+      <path id="eye-r" stroke-linecap="round" stroke-linejoin="round" d="M1126 134a13 13 0 0 1 25 0h1053" />
+      <path id="eye-l" stroke-linecap="round" stroke-linejoin="round" d="M1081 134a13 13 0 0 0-25 0H673l-20 24H-6" />
+      <path id="mouth" stroke-linecap="round" stroke-linejoin="round" d="M1121 158a18 18 0 1 1-37 0H-6" />
+      <path id="bottom-full" d="M-7 543h659l86-86h743l108 108h618" />
+      <path id="bottom-left" stroke-linecap="round" d="M-7 457h625" />
+      <path id="bottom-right" stroke-linecap="round" d="M2207 457h-627" />
+      <path id="face" stroke-linecap="round" stroke-linejoin="round" stroke-width="14" d="M1151 133.5a12.5 12.5 0 0 0-25 0M1056 133.5a12.5 12.5 0 0 1 25 0M1121 157.5a18.5 18.5 0 1 1-37 0"/>
+    </g>
+    <path class="connector-sm" mask="url(#mPathMaskMaster)" stroke-dasharray="12 12" stroke-width="4.5" d="M1006.3 326.7v140.2h93.6m-35.4-79v79m72.3-79v79m56.7-140.2v140.2h-93.6m0 0v148.4"/>
+    <mask id="mPathMaskMaster">
+      <path id="mPathMask" stroke="#fff" stroke-width="6" class="mask-line" d="M1006.3 326.7v140.2h93.6m-35.4-79v79m72.3-79v79m56.7-140.2v140.2h-93.6m0 0v148.4"/>
+    </mask>
+  </svg>

@@ -1,0 +1,28 @@
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: get-size("300");
+
+  svg {
+    border: 2px dashed;
+    border-radius: 50%;
+    padding: 0.25rem;
+    width: 3rem;
+    height: 3rem;
+
+    @include media-query("md") {
+      border-width: 4px;
+      padding: get-size("200");
+      width: 6.5rem;
+      height: 6.5rem;
+    }
+  }
+
+  a {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}

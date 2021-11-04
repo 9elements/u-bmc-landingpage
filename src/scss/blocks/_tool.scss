@@ -1,0 +1,27 @@
+.tools {
+  --switcher-justification: center;
+  --switcher-gap: 3rem;
+  --switcher-gap-vertical: 4rem;
+  --switcher-column-count: 2;
+  --switcher-threshold: 37.5rem;
+
+  @include media-query("lg") {
+    --switcher-column-count: 3;
+  }
+}
+.tool {
+  &__icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px dashed;
+    padding: get-size("200");
+    border-radius: 50%;
+    width: clamp(6.5rem, 27vw, 13.75rem);
+    height: clamp(6.5rem, 27vw, 13.75rem);
+
+    @include media-query("md") {
+      padding: get-size("400");
+    }
+  }
+}

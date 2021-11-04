@@ -1,0 +1,10 @@
+.column-text {
+  column-width: 26rem;
+  column-gap: get-size("major");
+
+  p {
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+    page-break-inside: avoid; /* Firefox */
+    break-inside: avoid; /* IE 10+ */
+  }
+}

@@ -1,0 +1,23 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--switcher-justification, flex-start);
+  gap: var(--switcher-gap-vertical, var(--switcher-gap, 1rem))
+    var(--switcher-gap, 1rem);
+
+  --gap-substract-portion: calc(
+    (var(--switcher-column-count, 3) - 1) / var(--switcher-column-count, 3)
+  );
+
+  > * {
+    flex-grow: 0;
+    flex-basis: max(
+      (100% / var(--switcher-column-count, 3)) -
+        (var(--switcher-gap, 1rem) * var(--gap-substract-portion)),
+      calc(
+        (var(--switcher-threshold, 30rem) - (100% - var(--switcher-gap, 1rem))) *
+          999
+      )
+    );
+  }
+}

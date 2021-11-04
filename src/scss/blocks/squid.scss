@@ -1,0 +1,47 @@
+.squid {
+  display: block;
+  width: 91rem;
+  height: auto;
+  stroke: var(--color-text);
+
+  path,
+  circle {
+    opacity: 0;
+  }
+
+  .no-js & {
+    [id*="circle"],
+    [id*="body"],
+    [id*="head"],
+    #face,
+    .connector-sm {
+      opacity: 1;
+    }
+  }
+}
+
+.connector-sm {
+  stroke-width: 0.25rem;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 12 12;
+}
+
+@include media-query("md") {
+  .squid {
+    width: 137.5rem;
+  }
+}
+
+@media screen and (min-width: 137.5em) {
+  .squid {
+    width: 100%;
+  }
+}
+
+.squid-container {
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+}

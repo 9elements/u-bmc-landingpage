@@ -1,0 +1,40 @@
+.site-head {
+  padding-top: get-size("500");
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__branding {
+    display: block;
+    width: 7.25rem;
+    color: var(--color-text);
+    text-decoration: none;
+
+    > svg {
+      display: block;
+      width: 100%;
+    }
+
+    &:hover {
+      color: var(--color-accent);
+    }
+
+    @include media-query("md") {
+      width: 14.5rem;
+    }
+  }
+
+  &__docs {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.site-foot {
+  padding-top: get-size("300");
+  padding-bottom: get-size("300");
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    > * {
+      flex-grow: 1;
+      display: grid;
+      align-items: center;
+    }
+
+    > *:first-child {
+      justify-items: start;
+
+      @include media-query("md") {
+        justify-items: end;
+      }
+    }
+    > *:last-child {
+      max-width: calc(50% - 3rem);
+      min-width: max-content;
+      justify-items: end;
+    }
+  }
+
+  p {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

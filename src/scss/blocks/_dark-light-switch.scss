@@ -1,0 +1,85 @@
+:root {
+  --toggle-width: 4rem;
+  --toggle-height: 1.75rem;
+  --thumb-offset: 3px;
+  --thumb-left: var(--thumb-offset);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-theme]) {
+    --thumb-left: calc(
+      var(--toggle-width) - var(--toggle-height) + var(--thumb-offset)
+    );
+  }
+}
+
+[data-color-theme="dark"] {
+  --thumb-left: calc(
+    var(--toggle-width) - var(--toggle-height) + var(--thumb-offset)
+  );
+}
+
+.no-js .user-toggle {
+  display: none;
+}
+
+.user-toggle {
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  background-color: var(--color-text);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 130 130'%3E%3Cpath fill='%2380D5EB' d='M87 108a43 43 0 0 1 0-86v86Z'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 130 130'%3E%3Cpath fill='%23fff' d='M69 15a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M29.5 65a35.5 35.5 0 1 1 71 0 35.5 35.5 0 0 1-71 0ZM65 40.5a24.5 24.5 0 1 0 0 49 24.5 24.5 0 0 0 0-49Z' clip-rule='evenodd'/%3E%3Cpath fill='%23fff' d='M115 69a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM19 65a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM26.8 97.5a4 4 0 1 0 5.7 5.7 4 4 0 0 0-5.7-5.7ZM97.5 32.5a4 4 0 1 1 5.7-5.7 4 4 0 0 1-5.7 5.7ZM97.5 103.2a4 4 0 1 0 5.7-5.7 4 4 0 0 0-5.7 5.7ZM32.5 32.5a4 4 0 1 1-5.7-5.7 4 4 0 0 1 5.7 5.7ZM65 119a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z'/%3E%3Ccircle cx='65' cy='15' r='6' fill='%23fff'/%3E%3Ccircle cx='65' cy='115' r='6' fill='%23fff'/%3E%3Ccircle cx='115' cy='65' r='6' fill='%23fff'/%3E%3Ccircle cx='15' cy='65' r='6' fill='%23fff'/%3E%3Ccircle cx='29' cy='101' r='6' fill='%23fff'/%3E%3Ccircle cx='101' cy='101' r='6' fill='%23fff'/%3E%3Ccircle cx='101' cy='29' r='6' fill='%23fff'/%3E%3Ccircle cx='29' cy='29' r='6' fill='%23fff'/%3E%3C/svg%3E");
+  background-size: calc(var(--toggle-height) - var(--thumb-offset) * 2);
+  background-repeat: no-repeat;
+  background-position: right calc(var(--thumb-offset) * 2) top
+      var(--thumb-offset),
+    calc(var(--thumb-offset) * 1) var(--thumb-offset);
+  border-radius: 999rem;
+  position: relative;
+  margin-left: auto;
+
+  &:before {
+    content: "";
+    width: calc(var(--toggle-height) - var(--thumb-offset) * 2);
+    height: calc(var(--toggle-height) - var(--thumb-offset) * 2);
+    background: var(--color-bg);
+    border-radius: 50%;
+    position: absolute;
+    left: var(--thumb-left);
+    top: var(--thumb-offset);
+    transition: left 0.2s ease-in-out, background-color 0.2s ease-out;
+  }
+}
+
+// [data-color-theme="dark"] .user-toggle:before {
+//   left: calc(var(--toggle-width) - var(--toggle-height) + var(--thumb-offset));
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   :root:not([data-color-theme]) .user-toggle:before {
+//     left: calc(
+//       var(--toggle-width) - var(--toggle-height) + var(--thumb-offset)
+//     );
+//   }
+// }
+
+.toggle-button {
+  display: block;
+  border: none;
+  font: inherit;
+  width: 100%;
+  height: 100%;
+  border-radius: 999rem;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition: outline-offset 0.2s ease-out;
+}
+
+.toggle-button:focus {
+  //outline: 1px solid var(--button-background);
+  outline-offset: 0.25rem;
+}
