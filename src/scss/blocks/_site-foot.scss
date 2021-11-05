@@ -16,8 +16,19 @@
     > *:first-child {
       justify-items: start;
 
+      &:hover {
+        color: get-color("peach");
+      }
       @include media-query("md") {
-        justify-items: end;
+        justify-items: start;
+      }
+    }
+
+    > *:nth-child(2) {
+      justify-items: center;
+
+      @include media-query("md") {
+        justify-items: center;
       }
     }
     > *:last-child {
