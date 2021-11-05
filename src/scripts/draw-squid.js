@@ -4,9 +4,12 @@ gsap.set("circle, path", {
   opacity: 1,
 });
 
-gsap.set(".usp-list, .usp-list > li, #circle-lr, #circle-ll, #face", {
-  opacity: 0,
-});
+gsap.set(
+  ".usp-list, .usp-list > li, #circle-lr, #circle-ll, #face, .connector-sm",
+  {
+    opacity: 0,
+  }
+);
 
 gsap.set(
   "#connector-ur, #connector-lr, #connector-ul, #connector-ll, #body-l-2, #head-2, #eye-r, #eye-l, #mouth",
@@ -46,6 +49,10 @@ gsap.set("#circle-ll", {
 function annotation() {
   const tl = gsap.timeline();
 
+  tl.set(".connector-sm", {
+    opacity: 1,
+  });
+
   tl.to(
     "#mPathMask",
     {
@@ -55,6 +62,31 @@ function annotation() {
     },
     "-=0.2"
   );
+
+  tl.to(
+    ".usp-list",
+    {
+      opacity: 1,
+      duration: 0.3,
+    },
+    "-=1.2"
+  );
+
+  tl.to(
+    ".usp-list > li",
+    {
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.25,
+    },
+    "-=0.9"
+  );
+
+  return tl;
+}
+
+function annotationLg() {
+  const tl = gsap.timeline();
 
   tl.to(
     ".usp-list",
@@ -341,15 +373,39 @@ function base() {
   return tl;
 }
 
-const master = gsap.timeline({
-  //paused: true,
-  //onComplete: () => { playing = false}
-});
+const master = gsap.timeline({ paused: true });
 
-master.add(base());
-master.add(body());
-master.add(face(), "-=0.9");
-master.add(bottom(), "-=2");
-master.add(cleanup(), "-=1.5");
-master.add(annotation(), "-=1.2");
-master.duration(5);
+var mql = window.matchMedia("(max-width: 1279px)");
+
+function createTimeline(e) {
+  if (e.matches) {
+    var progress = master.progress();
+    master.progress(0);
+    master.add(base());
+    master.add(body());
+    master.add(face(), "-=0.9");
+    master.add(bottom(), "-=2");
+    master.add(cleanup(), "-=1.5");
+    master.add(annotation(), "-=1.2");
+    master.duration(5);
+    master.progress(progress);
+    master.play();
+  } else {
+    var progress = master.progress();
+    master.progress(0);
+    master.add(base());
+    master.add(body());
+    master.add(face(), "-=0.9");
+    master.add(bottom(), "-=2");
+    master.add(cleanup(), "-=1.5");
+    master.add(annotationLg(), "-=1.2");
+    master.duration(5);
+    master.progress(progress);
+    master.play();
+  }
+}
+
+mql.addEventListener("change", createTimeline);
+
+// First run
+createTimeline(mql);

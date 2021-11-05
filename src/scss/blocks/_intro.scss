@@ -64,9 +64,21 @@
   }
 
   @include media-query("md") {
-    //grid-template-columns: 1fr 1fr;
-    //max-width: none;
-    //gap: 1rem 2rem;
+    grid-template-columns: 1fr 1fr;
+    max-width: none;
+    gap: 1rem 2rem;
+  }
+
+  @include media-query("xl") {
+    grid-template-columns: 22ch 22ch;
+    gap: 11rem 1rem;
+    margin-top: 5rem;
+    width: 100%;
+    justify-content: space-between;
+    &:before,
+    &:after {
+      display: none;
+    }
   }
 
   li {
@@ -75,9 +87,11 @@
     align-items: center;
     position: relative;
 
-    @include media-query("md") {
-      //flex-direction: column;
-      //gap: 0.5rem;
+    @include media-query("xl") {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      max-width: 24ch;
     }
 
     &:before {
@@ -88,6 +102,27 @@
       border-radius: 50%;
       box-shadow: inset 0 0 0 0.5rem currentColor;
       background: var(--color-bg);
+    }
+  }
+}
+
+@include media-query("xl") {
+  .squid-grid {
+    display: grid;
+    grid-template-columns: 1fr 60rem 1fr;
+    max-height: 34rem;
+    overflow: hidden;
+
+    > .squid-container {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    > .wrapper {
+      grid-column: 2;
+      grid-row: 1;
+      max-width: 80rem;
+      width: 100%;
     }
   }
 }

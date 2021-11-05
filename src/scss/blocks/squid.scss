@@ -38,6 +38,12 @@
   }
 }
 
+@include media-query("xl") {
+  .connector-sm {
+    display: none;
+  }
+}
+
 .squid-container {
   width: 100%;
   overflow: hidden;

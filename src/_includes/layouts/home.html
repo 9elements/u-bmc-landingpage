@@ -7,16 +7,18 @@
       baseboard management controllers.
     </h1>
   </div>
-  <div class="squid-container">
-    {% include "inline-svg/squid.svg" %}
-  </div>
-  <div class="wrapper">
-    <ul class="usp-list | text-300 lg:text-400">
-      <li>Using the BusyBox approach: One Binary to rule them all.</li>
-      <li>Fully Golang based userspace, no memory unsafe code apart from the Linux kernel!</li>
-      <li>Architecture and OS independent tooling [WIP]</li>
-      <li>A familiar feeling with the optional WebUI [WIP]</li>
-    </ul>
+  <div class="squid-grid">
+    <div class="squid-container">
+      {% include "inline-svg/squid.svg" %}
+    </div>
+    <div class="wrapper">
+      <ul class="usp-list | text-300 lg:text-400">
+        <li>Using the BusyBox approach: One Binary to rule them all.</li>
+        <li>Fully Golang based userspace, no memory unsafe code apart from the Linux kernel!</li>
+        <li>Architecture and OS independent tooling [WIP]</li>
+        <li>A familiar feeling with the optional WebUI [WIP]</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -43,7 +45,7 @@
     <div class="toolset__body | tools | switcher">
       {% for tool in tools %}
         <article class="tool | stack-300">
-          {% a11yIcon icon=tool.icon, class="tool__icon", alt="", width="6.5rem" %}
+          {% a11yIcon icon=tool.icon, class="tool__icon", alt="", width="104" %}
           <h3 class="text-400 md:text-600 leading-flat my-stack-space-500">{{ tool.headline }}</h3>
           <p class="text-300 md:text-400">{{ tool. body }}</p>
         </article>
@@ -81,21 +83,21 @@
       <h2 class="text-700 md:text-major leading-flat">Contact</h2>
       <div class="switcher" style="--switcher-threshold: 58rem; --switcher-gap-vertical: 2rem;">
         <div class="contact-item">
-          {% a11yIcon icon="github", alt="", width="6.5em" %}
+          {% a11yIcon icon="github", alt="", width="104" %}
           <p class="text-300 md:text-400 leading-tight">
             Find us on<br>
             <a href="https://github.com/u-root/u-bmc" class="weight-bold">GitHub</a>!
           </p>
         </div>
         <div class="contact-item">
-          {% a11yIcon icon="slack", alt="", width="6.5em" %}
+          {% a11yIcon icon="slack", alt="", width="104" %}
           <p class="text-300 md:text-400 leading-tight">
             Join our<br>
             <a href="https://github.com/u-root/u-bmc" class="weight-bold">Slack Channel</a>!
           </p>
         </div>
         <div class="contact-item">
-          {% a11yIcon icon="location", alt="", width="6.5em" %}
+          {% a11yIcon icon="location", alt="", width="104" %}
           <p class="text-300 md:text-400 leading-tight">
             Kortumstraße 19-21,<br>
             44787 Bochum
