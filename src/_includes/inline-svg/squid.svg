@@ -22,8 +22,32 @@
       <path id="bottom-right" stroke-linecap="round" d="M2207 457h-627" />
       <path id="face" stroke-linecap="round" stroke-linejoin="round" stroke-width="14" d="M1151 133.5a12.5 12.5 0 0 0-25 0M1056 133.5a12.5 12.5 0 0 1 25 0M1121 157.5a18.5 18.5 0 1 1-37 0"/>
     </g>
-    <path class="connector-sm" mask="url(#mPathMaskMaster)" stroke-dasharray="12 12" stroke-width="4.5" d="M1006.3 326.7v140.2h93.6m-35.4-79v79m72.3-79v79m56.7-140.2v140.2h-93.6m0 0v148.4"/>
-    <mask id="mPathMaskMaster">
-      <path id="mPathMask" stroke="#fff" stroke-width="6" class="mask-line" d="M1006.3 326.7v140.2h93.6m-35.4-79v79m72.3-79v79m56.7-140.2v140.2h-93.6m0 0v148.4"/>
+
+    <g class="sm-connectors" mask="url(#connectorSmMaskMaster)" stroke="#046" stroke-dasharray="11.93 11.93" stroke-width="4.47">
+      <path d="M1006.5 326.5V466h93.5v152.5"/>
+      <path d="M1193 326.5V466h-93.5v152.5"/>
+      <path d="M1064 389v74"/>
+      <path d="M1137 389v74"/>
+    </g>
+
+    <g class="lg-connectors" mask="url(#connectorLgMaskMaster)" stroke-dasharray="12 12" stroke-width="4.5">
+      <path d="M1136 389v34h199"/>
+      <path d="M1064 389v34H865"/>
+      <path d="M1224 294h26V78h165.5"/>
+      <path d="M975.5 294h-26V78H784"/>
+    </g>
+
+    <mask id="connectorSmMaskMaster" stroke="#fff" stroke-width="6">
+      <path class="nl" d="M1064 389v74"/>
+      <path class="nr" d="M1137 389v74"/>
+      <path class="fl" d="M1006.5 326.5V466h93.5v152.5"/>
+      <path class="fr" d="M1193 326.5V466h-93.5v152.5"/>
+    <mask>
+
+    <mask id="connectorLgMaskMaster" stroke="#fff" stroke-width="6">
+      <path class="lg-connectors__ul" d="M975.5 294h-26V78H784"/>
+      <path class="lg-connectors__ur" d="M1224 294h26V78h165.5"/>
+      <path class="lg-connectors__ll" d="M1064 389v34H865"/>
+      <path class="lg-connectors__lr" d="M1136 389v34h199"/>
     </mask>
   </svg>

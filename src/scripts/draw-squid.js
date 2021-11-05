@@ -5,7 +5,7 @@ gsap.set("circle, path", {
 });
 
 gsap.set(
-  ".usp-list, .usp-list > li, #circle-lr, #circle-ll, #face, .connector-sm",
+  ".usp-list, .usp-list > li, #circle-lr, #circle-ll, #face, .sm-connectors, .lg-connectors",
   {
     opacity: 0,
   }
@@ -19,7 +19,7 @@ gsap.set(
 );
 
 gsap.set(
-  "#mPathMask, #body-l-1, #body-ur, #body-ul, #head-1, #bottom-full, #bottom-left, #bottom-right",
+  "#connectorLgMaskMaster > path, #connectorSmMaskMaster > path, #body-l-1, #body-ur, #body-ul, #head-1, #bottom-full, #bottom-left, #bottom-right",
   {
     drawSVG: 0,
   }
@@ -49,37 +49,30 @@ gsap.set("#circle-ll", {
 function annotation() {
   const tl = gsap.timeline();
 
-  tl.set(".connector-sm", {
+  tl.set(".sm-connectors", {
     opacity: 1,
   });
 
-  tl.to(
-    "#mPathMask",
-    {
-      drawSVG: "100%",
-      duration: 1.5,
-      ease: "sinde.inOut",
-    },
-    "-=0.2"
-  );
+  tl.to("#connectorSmMaskMaster > path", {
+    drawSVG: "100%",
+    duration: 0.7,
+    ease: "sinde.inOut",
+    stagger: 0.2,
+  });
 
-  tl.to(
-    ".usp-list",
-    {
-      opacity: 1,
-      duration: 0.3,
-    },
-    "-=1.2"
-  );
+  tl.to(".usp-list", {
+    opacity: 1,
+    duration: 0.5,
+  });
 
   tl.to(
     ".usp-list > li",
     {
       opacity: 1,
       duration: 0.6,
-      stagger: 0.25,
+      stagger: 0.1,
     },
-    "-=0.9"
+    "-=0.4"
   );
 
   return tl;
@@ -88,21 +81,23 @@ function annotation() {
 function annotationLg() {
   const tl = gsap.timeline();
 
-  tl.to(
-    ".usp-list",
-    {
-      opacity: 1,
-      duration: 0.3,
-    },
-    "-=1.2"
-  );
+  tl.set(".lg-connectors, .usp-list", {
+    opacity: 1,
+  });
+
+  tl.to("#connectorLgMaskMaster > path", {
+    drawSVG: "100%",
+    duration: 0.7,
+    ease: "sinde.inOut",
+    stagger: 0.3,
+  });
 
   tl.to(
     ".usp-list > li",
     {
       opacity: 1,
-      duration: 0.6,
-      stagger: 0.25,
+      duration: 1,
+      stagger: 0.3,
     },
     "-=0.9"
   );
@@ -386,8 +381,8 @@ function createTimeline(e) {
     master.add(face(), "-=0.9");
     master.add(bottom(), "-=2");
     master.add(cleanup(), "-=1.5");
-    master.add(annotation(), "-=1.2");
-    master.duration(5);
+    master.add(annotation(), "-=1");
+    //master.duration(5);
     master.progress(progress);
     master.play();
   } else {
@@ -398,7 +393,7 @@ function createTimeline(e) {
     master.add(face(), "-=0.9");
     master.add(bottom(), "-=2");
     master.add(cleanup(), "-=1.5");
-    master.add(annotationLg(), "-=1.2");
+    master.add(annotationLg(), "-=1");
     master.duration(5);
     master.progress(progress);
     master.play();
