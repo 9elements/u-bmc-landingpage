@@ -1,0 +1,40 @@
+.plain {
+  h2 {
+    @include apply-utility("text", "500");
+
+    @include media-query("md") {
+      @include apply-utility("text", "700");
+    }
+  }
+
+  p {
+    & + h3 {
+      --stack-space: #{get-size("600")};
+    }
+    & + h2 {
+      --stack-space: #{get-size("major")};
+    }
+  }
+
+  h3,
+  h4 {
+    @include apply-utility("text", "400");
+    @include apply-utility("weight", "bold");
+
+    & + p {
+      --stack-space: #{get-size("200")};
+    }
+
+    @include media-query("md") {
+      @include apply-utility("text", "600");
+    }
+  }
+
+  a {
+    @include apply-utility("weight", "bold");
+
+    &:hover {
+      color: get-color("peach");
+    }
+  }
+}

@@ -1,29 +1,18 @@
 {% extends "layouts/base.html" %} {% block content %}
 
 <section id="intro" class="intro">
-  <div class="wrapper">
-    <h1 class="text-400 sm:text-500 md:text-600 leading-tight">
-      u-bmc is a Linux OS distribution that is fully open-source AND TAILOR MADE for
-      baseboard management controllers.
-    </h1>
-  </div>
-  <div class="squid-grid">
-    <div class="squid-container">
-      {% include "inline-svg/squid.svg" %}
-    </div>
-    <div class="wrapper">
-      <ul class="usp-list | text-300 lg:text-400">
-        <li>Using the BusyBox approach: One Binary to rule them all.</li>
-        <li>Fully Golang based userspace, no memory unsafe code apart from the Linux kernel!</li>
-        <li>Architecture and OS independent tooling [WIP]</li>
-        <li>A familiar feeling with the optional WebUI [WIP]</li>
-      </ul>
-    </div>
-  </div>
+
 </section>
 
 <div class="stack-major">
-
+  <div class="wrapper stack-major">
+    <h1 class="text-600 sm:text-700 md:text-major leading-tight">
+      Imprint
+    </h1>
+      <div class="plain text-300 md:text-400 stack-200">
+      {{ content | safe }}
+      </div>
+  </div>
 </div>
 
 {%endblock %}
