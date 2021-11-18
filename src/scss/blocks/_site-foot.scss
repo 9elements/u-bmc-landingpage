@@ -1,47 +1,49 @@
 .site-foot {
   padding-top: get-size("300");
   padding-bottom: get-size("300");
-  color: var(--color-bg);
 
   &__inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 1rem 2rem;
+    gap: 2rem;
     flex-wrap: wrap;
-    text-align: center;
-
-    @include media-query("md") {
-      flex-direction: row;
-      text-align: left;
-    }
 
     > * {
-      flex-grow: 999;
+      flex-grow: 1;
       display: grid;
       align-items: center;
-      flex-basis: 0;
     }
 
     > *:last-child {
-      justify-items: end;
+      max-width: calc(50% - 3rem);
+      min-width: max-content;
+      justify-items: start;
+      text-align: right;
+
       @include media-query("md") {
         text-align: left;
       }
     }
 
     > *:nth-child(2) {
-      flex-grow: 1;
-      justify-items: center;
+      justify-items: start;
+
+      @include media-query("md") {
+        justify-items: center;
+      }
     }
 
     > *:first-child {
-      white-space: nowrap;
-    }
-  }
+      justify-items: end;
 
-  a:hover {
-    color: get-color("peach");
+      @include media-query("md") {
+        justify-items: end;
+      }
+    }
+    a:hover {
+      color: get-color("peach");
+    }
   }
 
   p {
