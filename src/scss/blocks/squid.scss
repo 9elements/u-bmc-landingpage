@@ -24,8 +24,7 @@
 .lg-connectors {
   stroke-width: 0.375rem;
   vector-effect: non-scaling-stroke;
-  stroke-dasharray: 12 16;
-  stroke-linecap: round;
+  stroke-dasharray: 12 12;
 
   @include media-query("md") {
     stroke-width: 0.25rem;
@@ -39,6 +38,8 @@
 }
 
 .lg-connectors {
+  stroke-dasharray: 12 14;
+  stroke-linecap: round;
   display: none;
   animation: dashmove 1s linear infinite;
 }
