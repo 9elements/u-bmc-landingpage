@@ -17,6 +17,23 @@
     .connector-sm {
       opacity: 1;
     }
+
+    mask {
+      > * {
+        opacity: 1;
+      }
+    }
+
+    .lg-connectors {
+      path {
+        opacity: 1;
+      }
+    }
+    .sm-connectors {
+      path {
+        opacity: 1;
+      }
+    }
   }
 }
 

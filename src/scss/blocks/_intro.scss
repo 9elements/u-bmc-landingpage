@@ -71,15 +71,23 @@
 
   @include media-query("xl") {
     grid-template-columns: 22ch 22ch;
-    gap: 13.5rem 1rem;
+    gap: 7.5rem 1rem;
     margin-top: 5rem;
     width: 100%;
     justify-content: space-between;
+    grid-template-rows: 14rem auto;
     &:before,
     &:after {
       display: none;
     }
   }
+
+  // @media screen and (min-width: 137.5em) {
+  //   width: 100%;
+  //   grid-template-columns: 16ch 16ch;
+  //   gap: 10.9rem 1rem;
+  //   margin-top: 5.75rem;
+  // }
 
   li {
     display: flex;

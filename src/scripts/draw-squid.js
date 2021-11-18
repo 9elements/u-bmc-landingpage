@@ -371,6 +371,9 @@ function base() {
 const master = gsap.timeline({ paused: true });
 
 var mql = window.matchMedia("(max-width: 1279px)");
+var animationDuration = "";
+const prm = window.matchMedia("(prefers-reduced-motion: reduce)");
+const nop = window.matchMedia("(prefers-reduced-motion: no-preferences)");
 
 function createTimeline(e) {
   if (e.matches) {
@@ -382,7 +385,7 @@ function createTimeline(e) {
     master.add(bottom(), "-=2");
     master.add(cleanup(), "-=1.5");
     master.add(annotation(), "-=1");
-    //master.duration(5);
+    master.duration(animationDuration);
     master.progress(progress);
     master.play();
   } else {
@@ -394,13 +397,22 @@ function createTimeline(e) {
     master.add(bottom(), "-=2");
     master.add(cleanup(), "-=1.5");
     master.add(annotationLg(), "-=1");
-    master.duration(5);
+    master.duration(animationDuration);
     master.progress(progress);
     master.play();
   }
 }
 
 mql.addEventListener("change", createTimeline);
+
+//Prefered reduced motion
+if (prm.matches) {
+  animationDuration = 0;
+} else if (nop.matches) {
+  animationDuration = 5;
+} else {
+  animationDuration = 5;
+}
 
 // First run
 createTimeline(mql);
