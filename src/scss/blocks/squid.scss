@@ -24,7 +24,8 @@
 .lg-connectors {
   stroke-width: 0.375rem;
   vector-effect: non-scaling-stroke;
-  stroke-dasharray: 12 12;
+  stroke-dasharray: 12 16;
+  stroke-linecap: round;
 
   @include media-query("md") {
     stroke-width: 0.25rem;
