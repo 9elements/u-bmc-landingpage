@@ -4,10 +4,8 @@
 
   &__inner {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
     gap: 2rem;
-    flex-wrap: wrap;
 
     > * {
       flex-grow: 1;
@@ -15,32 +13,19 @@
       align-items: center;
     }
 
-    > *:last-child {
-      max-width: calc(50% - 3rem);
-      min-width: max-content;
-      justify-items: start;
-      text-align: right;
-
-      @include media-query("md") {
-        text-align: left;
-      }
-    }
-
-    > *:nth-child(2) {
-      justify-items: start;
-
-      @include media-query("md") {
-        justify-items: center;
-      }
-    }
-
     > *:first-child {
-      justify-items: end;
+      justify-items: start;
 
       @include media-query("md") {
         justify-items: end;
       }
     }
+    > *:last-child {
+      max-width: calc(50% - 3rem);
+      min-width: max-content;
+      justify-items: end;
+    }
+
     a:hover {
       color: get-color("peach");
     }
