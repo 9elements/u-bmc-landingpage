@@ -31,8 +31,17 @@
   }
 }
 
+@keyframes dashmove {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
 .lg-connectors {
+  stroke-dasharray: 12 14;
+  stroke-linecap: round;
   display: none;
+  animation: dashmove 1s linear infinite;
 }
 
 @include media-query("xl") {

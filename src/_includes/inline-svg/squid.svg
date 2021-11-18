@@ -6,8 +6,8 @@
       <circle id="circle-ll" cx="1064.5" cy="359.5" r="22.5" />
       <path id="connector-ur" d="M1216 296h986" />
       <path id="connector-ul" d="M985 296H-8" />
-      <path id="connector-lr" d="M1161.5 361H1428l66-66"/>
-      <path id="connector-ll" d="M1040 361H772.5l-66-66"/>
+      <path id="connector-lr" d="M1160.5 361H1428l66-66"/>
+      <path id="connector-ll" d="M1042 361H772.5l-66-66"/>
       <path id="body-l-1" d="M1139 338v-85a37 37 0 0 0-74 0v85" />
       <path id="body-l-2" d="M1139 338v-85a37 37 0 0 0-74 0v85" />
       <path id="body-ur" stroke-linecap="round" d="M1196 270c0-36-16-69-52-81" />
@@ -30,11 +30,11 @@
       <path d="M1137 389v74"/>
     </g>
 
-    <g class="lg-connectors" mask="url(#connectorLgMaskMaster)" stroke-dasharray="12 12" stroke-width="4.5">
-      <path d="M1136 389v34h199"/>
-      <path d="M1064 389v34H865"/>
-      <path d="M1224 294h26V78h165.5"/>
-      <path d="M975.5 294h-26V78H784"/>
+    <g class="lg-connectors" mask="url(#connectorLgMaskMaster)" stroke-dasharray="12 8" stroke-width="4.5">
+      <path id="lr" d="M1136 389v29a5 5 0 0 0 5 5h194"/>
+      <path id="ll" d="M1064 389v29a5 5 0 0 1-5 5H865"/>
+      <path id="ur" d="M1224 294h21a5 5 0 0 0 5-5V83a5 5 0 0 1 5-5h160.5"/>
+      <path id="ul" d="M975.5 294h-21a5 5 0 0 1-5-5V83a5 5 0 0 0-5-5H784"/>
     </g>
 
     <mask id="connectorSmMaskMaster" stroke="#fff" stroke-width="6">
