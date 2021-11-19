@@ -369,15 +369,18 @@ function base() {
 }
 
 const master = gsap.timeline({ paused: true });
-
-var mql = window.matchMedia("(max-width: 1279px)");
-var animationDuration = "";
+const mql = window.matchMedia("(max-width: 1279px)");
 const prm = window.matchMedia("(prefers-reduced-motion: reduce)");
-const nop = window.matchMedia("(prefers-reduced-motion: no-preferences)");
+let animationDuration = "0.1";
+
+//Prefered reduced motion
+if (!prm.matches) {
+  animationDuration = 5;
+}
 
 function createTimeline(e) {
   if (e.matches) {
-    var progress = master.progress();
+    let progress = master.progress();
     master.progress(0);
     master.add(base());
     master.add(body());
@@ -389,7 +392,7 @@ function createTimeline(e) {
     master.progress(progress);
     master.play();
   } else {
-    var progress = master.progress();
+    let progress = master.progress();
     master.progress(0);
     master.add(base());
     master.add(body());
@@ -404,15 +407,6 @@ function createTimeline(e) {
 }
 
 mql.addEventListener("change", createTimeline);
-
-//Prefered reduced motion
-if (prm.matches) {
-  animationDuration = 0;
-} else if (nop.matches) {
-  animationDuration = 5;
-} else {
-  animationDuration = 5;
-}
 
 // First run
 createTimeline(mql);

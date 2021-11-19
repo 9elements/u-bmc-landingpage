@@ -42,7 +42,7 @@
       <path class="nr" d="M1137 389v74"/>
       <path class="fl" d="M1006.5 326.5V466h93.5v152.5"/>
       <path class="fr" d="M1193 326.5V466h-93.5v152.5"/>
-    <mask>
+    </mask>
 
     <mask id="connectorLgMaskMaster" stroke="#fff" stroke-width="6">
       <path class="lg-connectors__ul" d="M975.5 294h-26V78H784"/>

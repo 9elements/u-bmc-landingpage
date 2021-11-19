@@ -24,15 +24,22 @@
       }
     }
 
-    .lg-connectors {
-      path {
-        opacity: 1;
-      }
-    }
+    .lg-connectors,
     .sm-connectors {
       path {
         opacity: 1;
       }
+    }
+  }
+
+  // Should not be needed, but Safari behaves strange when
+  // this is not set here.
+  @media (prefers-reduced-motion: reduce) {
+    #body-ur,
+    #body-ul,
+    #connectorLgMaskMaster path,
+    #connectorSmMaskMaster path {
+      stroke-dasharray: none !important;
     }
   }
 }
