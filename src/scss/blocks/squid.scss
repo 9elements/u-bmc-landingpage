@@ -65,7 +65,10 @@
   stroke-dasharray: 12 14;
   stroke-linecap: round;
   display: none;
-  animation: dashmove 1s linear infinite;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: dashmove 1s linear infinite;
+  }
 }
 
 @include media-query("xl") {

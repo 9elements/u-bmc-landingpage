@@ -370,11 +370,11 @@ function base() {
 
 const master = gsap.timeline({ paused: true });
 const mql = window.matchMedia("(max-width: 1279px)");
-const prm = window.matchMedia("(prefers-reduced-motion: reduce)");
+const prm = window.matchMedia("(prefers-reduced-motion: no-preference)");
 let animationDuration = "0.1";
 
 //Prefered reduced motion
-if (!prm.matches) {
+if (prm.matches) {
   animationDuration = 5;
 }
 
