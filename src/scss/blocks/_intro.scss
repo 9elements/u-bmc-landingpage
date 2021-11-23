@@ -82,12 +82,11 @@
     }
   }
 
-  // @media screen and (min-width: 137.5em) {
-  //   width: 100%;
-  //   grid-template-columns: 16ch 16ch;
-  //   gap: 10.9rem 1rem;
-  //   margin-top: 5.75rem;
-  // }
+  @media screen and (min-width: 137.5em) {
+    grid-template-columns: 19ch 19ch;
+    gap: 9.5rem 1rem;
+    margin-top: 5.3rem;
+  }
 
   li {
     display: flex;
