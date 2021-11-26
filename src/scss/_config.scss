@@ -66,13 +66,13 @@ $gorko-config: (
         ),
       ),
       "dark-toggle": (
-        "prefix": '[data-color-theme="dark"]',
+        "prefix": ':root[data-color-theme="dark"]',
         "tokens": (
           "color": $dark-colors,
         ),
       ),
       "light-toggle": (
-        "prefix": '[data-color-theme="light"]',
+        "prefix": ':root[data-color-theme="light"]',
         "tokens": (
           "color": $light-colors,
         ),
